@@ -3,9 +3,32 @@
 @import "tailwindcss";
 
 :root {
+  --bg-primary: #fcfbfa;
+  --bg-secondary: #f5f2eb;
+  --bg-glass: rgba(252, 251, 250, 0.85);
+  --text-primary: #1a1917;
+  --text-secondary: #5c5953;
+  --border-color: rgba(26, 25, 23, 0.08);
+  --accent-color: #9a2b1e;
+  --accent-light: rgba(154, 43, 30, 0.08);
+  --shadow-color: rgba(26, 25, 23, 0.05);
+
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: 'Montserrat', sans-serif;
-  background-color: #0b0214;
-  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root.dark {
+  --bg-primary: #121110;
+  --bg-secondary: #1a1917;
+  --bg-glass: rgba(26, 25, 23, 0.85);
+  --text-primary: #e6e4de;
+  --text-secondary: #a3a099;
+  --border-color: rgba(230, 228, 222, 0.08);
+  --accent-color: #e54d3b;
+  --accent-light: rgba(229, 77, 59, 0.12);
+  --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 .font-serif {
@@ -17,28 +40,28 @@
 }
 
 @utility bg-glass-heavy {
-  background: rgba(16, 3, 32, 0.85);
+  background: var(--bg-glass);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
 }
 
 @utility bg-glass-light {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
 }
 
 /* Custom animations and styling overrides */
 @keyframes pulse-glow {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.4;
+    opacity: 0.15;
   }
   50% {
     transform: scale(1.05);
-    opacity: 0.6;
+    opacity: 0.3;
   }
 }
 
@@ -50,7 +73,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: #090212;
+  background-color: var(--bg-primary);
 }
 
 /* Custom scrollbars */
@@ -58,14 +81,14 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #090212;
+  background: var(--bg-secondary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #25093f;
+  background: var(--border-color);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #e040fb;
+  background: var(--accent-color);
 }
 
 .scroll-reveal {
@@ -74,3 +97,10 @@ body {
   transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
