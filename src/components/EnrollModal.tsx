@@ -3,11 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from 'react';
-import type { ChangeEvent, FormEvent } from 'react';
+import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { PRICING_PLANS } from '../data';
 import { formatPhoneNumber } from '../utils';
-import { X, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { X, Check, ArrowRight, Star, Heart, FileText, CheckCircle2 } from 'lucide-react';
 
 interface EnrollModalProps {
   isOpen: boolean;
