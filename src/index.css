@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syne:wght@400..800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0b0214;
+  color: #ffffff;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+@utility bg-glass-heavy {
+  background: rgba(16, 3, 32, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility bg-glass-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom animations and styling overrides */
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 10s infinite ease-in-out;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #090212;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090212;
+}
+::-webkit-scrollbar-thumb {
+  background: #25093f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e040fb;
+}
